@@ -1,15 +1,12 @@
 
-
-var computerGuess;
-var sum
-var crystalOneRandom
-var crystalTwo;
-var crystalThree;
-var crystalFour;
-var winLossStatement;
-var playerWins;
-var playerLosses;
+//var totalPlayerGuess = $( "#player-random" ).val();
+var computerRandom;
+var totalPlayerGuess;
 var playerGuessArray = [];
+var totalPlayerGuess = playerGuessArray
+var sum = totalPlayerGuess
+
+
 
 
 //Create a function that will pick a random number between 19 and 120
@@ -31,7 +28,7 @@ function getComputerRandom(){
         
                 //Create function to get random number between 1 and 12
 function getCrystalOneRandom(){
-				// Store random value in computerguess
+				// Store random value in crystalOneRandom
                 crystalOneRandom = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
                 console.log(crystalOneRandom);
 
@@ -39,27 +36,47 @@ function getCrystalOneRandom(){
                 $("#crystal-1").on("click", function() {
 
                    playerGuessArray.push(crystalOneRandom);
+
+                      //insert function
+                   function sumOfTotalPlayerGuess(){
+			var sum = 0;
+            $.each(totalPlayerGuess,function(){sum+=parseFloat(this) || 0;});
+            console.log(sum)  
+            if (sum > computerRandom){
+            	alert("Too Bad! You Loose");
+            	$("#losses").append("Losses: 1");
+           
+            }
+            if (sum === computerRandom) {
+            	alert("Great Job! You win");
+            	$("#wins").append("Wins: 1");
+            }
+       }
+ 		sumOfTotalPlayerGuess();
+
+                   // End Function
                  
 
 
                  //Add the contents of the array and save them in sum
-                 sum = 0;  
+                  
              for (var i = 0, sum = 0; i < playerGuessArray.length; sum += playerGuessArray[i++])
                    	console.log(sum);
                    //Put the total in id player-random
                    document.getElementById("player-random").innerHTML = sum;
+
                   
     });
             }
 
-
+ //Call function
             getCrystalOneRandom()
 
 
 
                 //Create function to get random number between 1 and 12
 function getCrystalTwoRandom(){
-				// Store random value in computerguess
+				// Store random value in crystalTwoRandom
                 crystalTwoRandom = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
                 console.log(crystalTwoRandom);
 
@@ -67,6 +84,25 @@ function getCrystalTwoRandom(){
                 $("#crystal-2").on("click", function() {
 
                    playerGuessArray.push(crystalTwoRandom);
+
+                      //insert function
+                   function sumOfTotalPlayerGuess(){
+			var sum = 0;
+            $.each(totalPlayerGuess,function(){sum+=parseFloat(this) || 0;});
+            console.log(sum)  
+            if (sum > computerRandom){
+            	alert("Too Bad! You Loose");
+            	$("#losses").append("Losses: 1");
+           
+            }
+            if (sum === computerRandom) {
+            	alert("Great Job! You win");
+            	$("#wins").append("Wins: 1");
+            }
+       }
+ 		sumOfTotalPlayerGuess();
+
+                   // End Function
                  
 
 
@@ -76,16 +112,17 @@ function getCrystalTwoRandom(){
                    	console.log(sum);
                    //Put the total in id player-random
                    document.getElementById("player-random").innerHTML = sum;
+                   
                   
     });
             }
 
-
+ //Call function
             getCrystalTwoRandom()
 
                //Create function to get random number between 1 and 12
 function getCrystalThreeRandom(){
-				// Store random value in computerguess
+				// Store random value in crystalThreeRandom
                 crystalThreeRandom = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
                 console.log(crystalThreeRandom);
 
@@ -93,6 +130,25 @@ function getCrystalThreeRandom(){
                 $("#crystal-3").on("click", function() {
 
                    playerGuessArray.push(crystalThreeRandom);
+
+                      //insert function
+                   function sumOfTotalPlayerGuess(){
+			var sum = 0;
+            $.each(totalPlayerGuess,function(){sum+=parseFloat(this) || 0;});
+            console.log(sum)  
+            if (sum > computerRandom){
+            	alert("Too Bad! You Loose");
+            	$("#losses").append("Losses: 1");
+           
+            }
+            if (sum === computerRandom) {
+            	alert("Great Job! You win");
+            	$("#wins").append("Wins: 1");
+            }
+       }
+ 		sumOfTotalPlayerGuess();
+
+                   // End Function
                  
 
 
@@ -102,16 +158,17 @@ function getCrystalThreeRandom(){
                    	console.log(sum);
                    //Put the total in id player-random
                    document.getElementById("player-random").innerHTML = sum;
+
                   
     });
             }
 
-
+ //Call function
             getCrystalThreeRandom()
 
               //Create function to get random number between 1 and 12
 function getCrystalFourRandom(){
-				// Store random value in computerguess
+				// Store random value in crystalFourRandom
                 crystalFourRandom = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
                 console.log(crystalFourRandom);
 
@@ -119,31 +176,49 @@ function getCrystalFourRandom(){
                 $("#crystal-4").on("click", function() {
 
                    playerGuessArray.push(crystalFourRandom);
-                 
 
+                   //insert function
+                   function sumOfTotalPlayerGuess(){
+			var sum = 0;
+            $.each(totalPlayerGuess,function(){sum+=parseFloat(this) || 0;});
+            console.log(sum)  
+            
+            if (sum > computerRandom){
+            	alert("Too Bad! You Loose");
+            	$("#losses").append("Losses: 1");
+           
+            }
+            if (sum === computerRandom) {
+            	alert("Great Job! You win");
+            	$("#wins").append("Wins: 1");
+            }
+       }
+ 		sumOfTotalPlayerGuess();
 
+                   // End Function
                  //Add the contents of the array and save them in sum  
                  sum = 0; 
              for (var i = 0, sum = 0; i < playerGuessArray.length; sum += playerGuessArray[i++])
                    	console.log(sum);
                    //Put the total in id player-random
                    document.getElementById("player-random").innerHTML = sum;
- 
+                
     });
             }
+            getCrystalFourRandom() 
 
+       
 
-            getCrystalFourRandom()
-            function winner() {
-				playerGuess = document.getElementById("player-random");
-				if (playerGuess > computerRandom) {
-            	
-            	alert("Hello");
-            	}
-            }
+     
+            
+               
+             
+
+          
             
 
-            winner();
+            
+         
 
 
 //<--Computer number is displayed on screen
