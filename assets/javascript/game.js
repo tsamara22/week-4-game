@@ -1,18 +1,19 @@
 
-//var totalPlayerGuess = $( "#player-random" ).val();
-var computerRandom;
+
+var computerRandom
 var totalPlayerGuess;
 var playerGuessArray = [];
 var totalPlayerGuess = playerGuessArray
 var sum = totalPlayerGuess
 
 
-
-
 //Create a function that will pick a random number between 19 and 120
 //Random number picked by computer between 19 and 120
 function getComputerRandom(){
-				// Store random value in computerguess
+				
+
+
+				// Store random value in computerRandom
                 computerRandom = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
                 
                 console.log(computerRandom);
@@ -22,8 +23,7 @@ function getComputerRandom(){
         $("#computer-random").append(computerRandom);
     });
 
-        }
-				// initial number guessed by computer
+        }				// initial number guessed by computer
                 getComputerRandom();
         
                 //Create function to get random number between 1 and 12
@@ -42,15 +42,23 @@ function getCrystalOneRandom(){
 			var sum = 0;
             $.each(totalPlayerGuess,function(){sum+=parseFloat(this) || 0;});
             console.log(sum)  
-            if (sum > computerRandom){
-            	alert("Too Bad! You Loose");
-            	$("#losses").append("Losses: 1");
-           
+            if (sum > computerRandom){ 
+            //$("#win-lost").append("Too bad! You Lost.");
+            	alert("Too Bad! You Lost Play Again");
+            	function resetFunction() {
+    			location.reload();
+			}
+			resetFunction()
             }
+
             if (sum === computerRandom) {
-            	alert("Great Job! You win");
-            	$("#wins").append("Wins: 1");
-            }
+            //$("#win-lost").append("Great Job! You win");
+				alert("You Won! Play Again");
+				function resetFunction() {
+    			location.reload();
+			}
+			resetFunction()            	
+}
        }
  		sumOfTotalPlayerGuess();
 
@@ -90,15 +98,23 @@ function getCrystalTwoRandom(){
 			var sum = 0;
             $.each(totalPlayerGuess,function(){sum+=parseFloat(this) || 0;});
             console.log(sum)  
-            if (sum > computerRandom){
-            	alert("Too Bad! You Loose");
-            	$("#losses").append("Losses: 1");
-           
+            if (sum > computerRandom){ 
+            //$("#win-lost").append("Too bad! You Lost.");
+            	alert("Too Bad! You Lost Play Again");
+            	function resetFunction() {
+    			location.reload();
+			}
+			resetFunction()
             }
+
             if (sum === computerRandom) {
-            	alert("Great Job! You win");
-            	$("#wins").append("Wins: 1");
-            }
+            //$("#win-lost").append("Great Job! You win");
+				alert("You Won! Play Again");
+				function resetFunction() {
+    			location.reload();
+			}
+			resetFunction()            	
+}
        }
  		sumOfTotalPlayerGuess();
 
@@ -136,15 +152,23 @@ function getCrystalThreeRandom(){
 			var sum = 0;
             $.each(totalPlayerGuess,function(){sum+=parseFloat(this) || 0;});
             console.log(sum)  
-            if (sum > computerRandom){
-            	alert("Too Bad! You Loose");
-            	$("#losses").append("Losses: 1");
-           
+            if (sum > computerRandom){ 
+            //$("#win-lost").append("Too bad! You Lost.");
+            	alert("Too Bad! You Lost Play Again");
+            	function resetFunction() {
+    			location.reload();
+			}
+			resetFunction()
             }
+
             if (sum === computerRandom) {
-            	alert("Great Job! You win");
-            	$("#wins").append("Wins: 1");
-            }
+            //$("#win-lost").append("Great Job! You win");
+				alert("You Won! Play Again");
+				function resetFunction() {
+    			location.reload();
+			}
+			resetFunction()            	
+}
        }
  		sumOfTotalPlayerGuess();
 
@@ -182,16 +206,36 @@ function getCrystalFourRandom(){
 			var sum = 0;
             $.each(totalPlayerGuess,function(){sum+=parseFloat(this) || 0;});
             console.log(sum)  
-            
-            if (sum > computerRandom){
-            	alert("Too Bad! You Loose");
-            	$("#losses").append("Losses: 1");
            
-            }
+            if (sum > computerRandom){ 
+            
+            	$("#win-lost").append("Too bad! You Lost.");
+            	alert("Too Bad! You Lost Play Again");
+            	
+
+
+            	playerGuessArray = [];
+				function resetFunction() {
+    			location.reload();
+			}
+			resetFunction()  
+            } else
+
             if (sum === computerRandom) {
-            	alert("Great Job! You win");
-            	$("#wins").append("Wins: 1");
-            }
+				
+				$("#win-lost").append("You Won! Play Again");
+				
+				playerGuessArray = [];
+				function resetFunction() {
+    			location.reload();
+			}
+			resetFunction()  
+			
+			
+			          	
+			}
+			
+           
        }
  		sumOfTotalPlayerGuess();
 
@@ -207,6 +251,7 @@ function getCrystalFourRandom(){
             }
             getCrystalFourRandom() 
 
+    
        
 
      
